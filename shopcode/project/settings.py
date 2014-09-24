@@ -114,8 +114,11 @@ SHARED_APPS = (
 TENANT_APPS = (
     # django apps
     'django.contrib.contenttypes',
+    'django.contrib.auth',
     # third apps
     'south',
+    # my apps
+    'ecommerce',
 )
 
 TENANT_MODEL = "core.Client"

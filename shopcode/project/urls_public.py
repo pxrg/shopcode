@@ -4,7 +4,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns(
     '',
-    url(r'^', include('core.urls', namespace='public')),
+    url(r'^', include('core.urls', namespace='core')),
 )
 
 if settings.DEBUG:
