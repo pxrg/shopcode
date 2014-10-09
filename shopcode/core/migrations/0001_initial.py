@@ -14,8 +14,13 @@ class Migration(SchemaMigration):
             ('domain_url', self.gf('django.db.models.fields.CharField')(unique=True, max_length=128)),
             ('schema_name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=63)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=180)),
-            ('email', self.gf('django.db.models.fields.EmailField')(max_length=180)),
-            ('created_on', self.gf('django.db.models.fields.DateField')(auto_now_add=True, blank=True)),
+            ('entity', self.gf('django.db.models.fields.CharField')(max_length=2)),
+            ('cpf_cnpj', self.gf('django.db.models.fields.CharField')(unique=True, max_length=20)),
+            ('subdomain', self.gf('django.db.models.fields.CharField')(unique=True, max_length=30)),
+            ('email', self.gf('django.db.models.fields.EmailField')(unique=True, max_length=180)),
+            ('phone', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
+            ('mobile_phone', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
+            ('created_on', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
         db.send_create_signal(u'core', ['Client'])
 
@@ -28,12 +33,17 @@ class Migration(SchemaMigration):
     models = {
         u'core.client': {
             'Meta': {'ordering': "['-created_on']", 'object_name': 'Client'},
-            'created_on': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'cpf_cnpj': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '20'}),
+            'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'domain_url': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '128'}),
-            'email': ('django.db.models.fields.EmailField', [], {'max_length': '180'}),
+            'email': ('django.db.models.fields.EmailField', [], {'unique': 'True', 'max_length': '180'}),
+            'entity': ('django.db.models.fields.CharField', [], {'max_length': '2'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'mobile_phone': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '180'}),
-            'schema_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '63'})
+            'phone': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
+            'schema_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '63'}),
+            'subdomain': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         }
     }
 

@@ -26,7 +26,7 @@ SOUTH_DATABASE_ADAPTERS = {
     'default': 'south.db.postgresql_psycopg2',
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['saas.io', '*.saas.io']
 
 TIME_ZONE = 'America/Chicago'
 
@@ -118,7 +118,6 @@ TENANT_APPS = (
     # third apps
     'south',
     # my apps
-    'ecommerce',
 )
 
 TENANT_MODEL = "core.Client"

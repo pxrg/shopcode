@@ -1,13 +1,19 @@
+from django.conf import settings
 from django.views.generic.edit import CreateView
+from django.core.urlresolvers import reverse_lazy
 from core.models import Client
 
 
-class RegisterClientView(CreateView):
+class HomeView(CreateView):
     model = Client
-    fields = ['name', 'email', 'domain_url']
-    success_url = '/'
+    template_name = 'index.html'
+    success_url = reverse_lazy('core:home')
 
-    def form_valid(self, form):
-        domain_url = form.cleaned_data['domain_url']
-        form.instance.schema_name = domain_url.split('.')[0]
-        return super(RegisterClientView, self).form_valid(form)
+    fields = ('name', 'entity', 'cpf_cnpj',
+              'subdomain', 'email', 'phone',
+              'mobile_phone')
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['domain_url'] = settings.ALLOWED_HOSTS[0]
+        return context
