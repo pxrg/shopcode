@@ -36,13 +36,13 @@ class HomeView(CreateView):
         password = User.objects.make_random_password(length=10)
         User.objects.create_superuser(username, email, password)
         # envia e-mail
-        self.send_mail(email, password)
+        self.send_mail(email, username, password)
         return super(HomeView, self).form_valid(form)
 
-    def send_mail(self, to, password):
+    def send_mail(self, to, user, password):
         from_email = 'igr.exe@gmail.com'
         subject = 'Password SaaS.io System'
-        text = 'This is password {0}.'.format(password)
+        text = 'This is usernae {0} and password {0}.'.format(user, password)
         html = '<p>This is password <strong>{0}</strong>.</p>'.format(password)
         msg = EmailMultiAlternatives(subject, text, from_email, [to])
         msg.attach_alternative(html, "text/html")

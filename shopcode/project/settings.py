@@ -115,9 +115,14 @@ TENANT_APPS = (
     # django apps
     'django.contrib.contenttypes',
     'django.contrib.auth',
+    'django.contrib.admin',
     # third apps
     'south',
+    'shop',
+    'polymorphic',
+    'shop.addressmodel',
     # my apps
+    'qrshop',
 )
 
 TENANT_MODEL = "core.Client"

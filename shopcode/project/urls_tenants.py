@@ -1,8 +1,11 @@
-from django.conf.urls import patterns, url
-from django.views.generic.base import TemplateView
+from django.conf.urls import patterns, url, include
+from shop import urls as shop_urls
+
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', TemplateView.as_view(
-        template_name='older/index_tenant.html')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include(shop_urls)),
 )
