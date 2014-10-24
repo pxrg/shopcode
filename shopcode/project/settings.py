@@ -149,3 +149,12 @@ LOGGING = {
         },
     }
 }
+
+# Settings sending e-mail by Django
+# https://docs.djangoproject.com/en/1.6/topics/email/
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'igr.exe@gmail.com'
+EMAIL_HOST_PASSWORD = '5ybWxGzjxL_pe2DS1zn3UQ'
