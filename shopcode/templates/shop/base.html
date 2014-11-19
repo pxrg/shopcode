@@ -26,9 +26,14 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+    .navbar-inverse{
+      background-color: black;
+    }
+    </style>
   </head>
   <body id="page-home">
-  	<nav class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
+  	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -38,22 +43,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand menus" href="#page-home">Lucky</a>
+          <a class="navbar-brand menus" href="#">{% block page_title %}{% endblock %}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="hidden"><a href="#page-home"></a></li>
-            <li><a href="{% url 'product_list' %}">Product list</a></li>
-            <li><a href="{% url 'order_list' %}">Your orders</a></li>
-            <li><a href="{% url 'cart' %}">Your cart</a></li>
+            <li><a href="{% url 'product_list' %}">Produtos</a></li>
+            <li><a href="{% url 'order_list' %}">Pedidos</a></li>
+            <li><a href="{% url 'cart' %}">Carrinho</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
   	<!-- end:navbar -->
-    {% block body %}
-    {% endblock %}
+    <div class="container" style="margin-top:60px;" role="main">
+      {% block body %}
+      {% endblock %}
+    </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
 {% load url from future %}
+{% block page_title %}{{object.get_name}}{% endblock %}
 {% block body %}
 
   <h1>Product detail:</h1>
