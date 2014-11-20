@@ -14,6 +14,7 @@ class Migration(SchemaMigration):
             ('author', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('cover_picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
             ('isbn', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('description', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal(u'qrshop', ['Book'])
 
@@ -36,6 +37,7 @@ class Migration(SchemaMigration):
             'author': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'cover_picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'isbn': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'description': ('django.db.models.fields.TextField', [], {}),
             u'product_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['shop.Product']", 'unique': 'True', 'primary_key': 'True'})
         },
         'shop.product': {

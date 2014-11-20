@@ -16,7 +16,7 @@ DATABASES = {
         'ENGINE': 'tenant_schemas.postgresql_backend',
         'NAME': 'saas',
         'USER': 'postgres',
-        'PASSWORD': '123456',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -40,9 +40,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = BASE_DIR.child('img')
 
-MEDIA_URL = ''
+MEDIA_URL = '/img/'
 
 STATIC_ROOT = ''
 

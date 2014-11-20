@@ -1,13 +1,13 @@
 {% extends "shop/base.html" %}
 {% load i18n %}
-
+{% block page_title %}Lista de pedidos{% endblock %}
 {% block body %}
   <h1>{% trans "Order list" %}</h1>
 
-  <ul>
+  <ul class="list-group">
     {% for order in object_list  %}
-    <li>
-      <a href="{{ order.get_absolute_url }}">{{ order }}</a>
+    <li class="list-group-item">
+      <a href="{{ order.get_absolute_url }}">Pedido numero: {{ order.id }}</a>
     </li>
     {% endfor %}
   </ul>

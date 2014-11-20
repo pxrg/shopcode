@@ -1,27 +1,32 @@
 {% extends "shop/base.html" %}
+{% load staticfiles %}
 {% load url from future %}
 
+{% block page_title %}Lista de Produtos{% endblock %}
 {% block body %}
-  <h1>Product list:</h1>
-  <hr />
-  {% for object in object_list %}
-  <a href="{% url 'product_detail' object.slug %}">{{object.get_name}}</a><br />
-  {{object.slug}}<br />
-  {{object.short_description}}<br />
-  {{object.long_description}}<br />
-  {{object.active}}<br />
-
-  {{object.date_added}}<br />
-  {{object.last_modified}}<br />
-
-  {{object.unit_price}}<br />
-
-  {% if object.category %}
-  {{object.category.name}}<br />
-  {% else %}
-  (Product is at root category)<br />
-  {% endif %}
-  <hr />
-
-  {% endfor %}
+  <style type="text/css">
+    .item_shop{
+      border: 1px solid #CCC;
+    }
+    .jumbotron{
+      padding: 5px 0px; 
+      margin: 5px 10px;
+    }
+    .add_border{
+      border:1px solid #ccc;
+      border-radius:6px; 
+      padding: 10px;
+    }
+  </style>
+  <h1>&nbsp;</h1>
+  <div class="row">
+    {% for object in object_list %}
+      <div class="col-xs-3 col-sm-3 item_shop jumbotron">
+        <a href="{% url 'product_detail' object.slug %}">{{object.get_name}} - R$ {{object.unit_price}}</a><br />
+        {{ object.author }}
+        <img data-src="holder.js/100x100" class="img-responsive " src="/{{ object.cover_picture }}" />
+      </div>
+      <hr />
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -46,9 +46,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="hidden"><a href="#page-home"></a></li>
-            <li><a href="#register">Register</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#register">Registro</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#contact">Contatos</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -63,10 +63,10 @@
         		<div class="row">
         			<div class="col-md-12">
         				<div class="slider-caption">
-        					<h2 class="animated fadeInLeftBig">Hello Mate!</h2>
+        					<h2 class="animated fadeInLeftBig">Bem vindo ao ShopCood!</h2>
         					<div class="animated fadeInDownBig">
-                    <p>Phasellus quis <strong>lectus</strong> metus, at posuere neque. Sed pharetra nibh eget orci convallis <strong>at posuere</strong> leo convallis</p>
-                    <div class="marg30-top-btm"><a href="#register" class="btn btn-lucky-secondary btn-xl">Take a tour</a></div>
+                    <p>Seja um de nossos clientes</p>
+                    <div class="marg30-top-btm"><a href="#register" class="btn btn-lucky-secondary btn-xl">Cadastro</a></div>
                   </div>
         				</div>
         			</div>
@@ -83,15 +83,19 @@
   			<div class="row">
   				<div class="col-md-12">
   					<div class="page-title">
-  						<h2>Register your shop<small>Register your shop with simple click!</small></h2>
+  						<h2>ShopCode<small>Registre sua loja aqui!</small></h2>
   					</div>
   				</div>
   			</div>
   			<!-- break -->
   			<div class="row">
           <div class="col-md-6 col-sm-6">
-            <h3 class="text-xbold text-uppercase">Terms & Conditions</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et tortor sit amet nibh cursus lacinia non dignissim neque. Sed efficitur faucibus nibh, nec varius enim malesuada in. Etiam orci mauris, scelerisque sed diam sit amet, dictum pretium dui. Pellentesque facilisis nisi et diam egestas, ut rutrum libero tempor. Cras eleifend euismod urna. Suspendisse et massa in orci venenatis consequat nec nec quam. Suspendisse luctus tellus quis nisi sodales fringilla. Sed vehicula dapibus leo, nec rutrum ipsum tempus non. Vivamus at lacinia libero. Nunc et lectus eu nibh efficitur malesuada. Aliquam accumsan lacinia turpis at pharetra. Integer condimentum, nunc non varius tempor, leo elit facilisis dolor, at ultrices ipsum odio non magna. Praesent laoreet volutpat erat, non elementum turpis suscipit id. Praesent leo magna, imperdiet in lacinia sed, egestas et justo. Morbi posuere magna ligula, in aliquet ligula pretium rutrum. Nam aliquam nisi sed quam mattis dictum.</p>
+            <h3 class="text-xbold text-uppercase">Termos & Condições de uso</h3>
+            <p>O cliente compromete-se a utilizar o presente serviço cumprindo as leis e regulamentos em vigor que ao mesmo sejam aplicáveis, bem como os Termos e Condições aqui enunciados;
+A INCM pode, a todo o tempo, alterar, no todo ou em parte, os Termos e Condições aqui expostos;
+O cliente não pode alterar o conteúdo do Serviço ou enviar mensagens que contenham vírus informáticos ou possam provocar quaisquer outros danos;
+Os clientes da loja online são considerados consumidores finais, sujeitos à liquidação de IVA, com exceção dos residentes em países terceiros, fora do espaço da União Europeia;
+O processo de venda encontra-se sujeito ao cumprimento das normas definidas pela Lei n.º 25/2008 de 5 de junho, relativo ao regime de prevenção e repressão do branqueamento de vantagens de proveniência ilícita e ao financiamento do terrorismo.</p>
           </div>
           <div class="col-md-6 col-sm-6">
             <form class="contact-form" role="form" method="POST">
@@ -110,7 +114,7 @@
                 {% endif %}
                 <div class="form-group col-md-12 col-sm-12">
                   <label for="{{ form.name.name }}" class="sr-only">{{ form.name.label }}</label>
-                  <input type="text" class="form-control input-lg" id="{{ form.name.auto_id }}" name="{{ form.name.name }}" placeholder="{{ form.name.label }}" required="">
+                  <input type="text" class="form-control input-lg" id="{{ form.name.auto_id }}" name="{{ form.name.name }}" placeholder="nome" required="">
                   <span class="form-focus-icon focus-icon-name"></span>
                 </div>
               </div>
@@ -135,8 +139,8 @@
                 <div class="form-group col-md-5 col-sm-5">
                   <label class="sr-only" for="{{ form.entity.auto_id }}">{{ form.entity.label }}</label>
                   <select class="form-control input-lg" id="{{ form.entity.auto_id }}" name="{{ form.entity.name }}" required="required" title="">
-                    <option value="PJ">Legal Person</option>
-                    <option value="PF" selected="selected">Natural Person</option>
+                    <option value="PJ">Pessoa jurídica</option>
+                    <option value="PF" selected="selected">Pessoa física</option>
                   </select>
                 </div>
               </div>
@@ -149,13 +153,13 @@
                 {% endif %}
                 <div class="form-group col-md-7 col-sm-7">
                   <label for="{{ form.subdomain.name }}" class="sr-only">{{ form.subdomain.label }}</label>
-                  <input type="text" class="form-control input-lg" id="{{ form.subdomain.auto_id }}" name="{{ form.subdomain.name }}" placeholder="{{ form.subdomain.label }}" required="">
+                  <input type="text" class="form-control input-lg" id="{{ form.subdomain.auto_id }}" name="{{ form.subdomain.name }}" placeholder="Subdominio" required="">
                 </div>
                 <div class="form-group col-md-5 col-sm-5">
                   <h3 class="text-bold text-lowercase">.{{ domain_url }}</h3>
                 </div>
               </div>
-              <h2 class="text-xbold text-uppercase">Contact</h2>
+              <h2 class="text-xbold text-uppercase">Contatos</h2>
               <div class="row">
                 {% if form.email.errors %}
                 <div class="alert alert-danger" role="alert">
@@ -184,16 +188,16 @@
                 {% endif %}
                 <div class="form-group col-md-6 col-sm-6">
                   <label for="{{ form.phone.name }}" class="sr-only">{{ form.phone.label }}</label>
-                  <input type="text" class="form-control input-lg" id="{{ form.phone.auto_id }}" name="{{ form.phone.name }}" placeholder="{{ form.phone.label }}">
+                  <input type="text" class="form-control input-lg" id="{{ form.phone.auto_id }}" name="{{ form.phone.name }}" placeholder="Telefone">
                   <span class="form-focus-icon focus-icon-phone"></span>
                 </div>
                 <div class="form-group col-md-6 col-sm-6">
                   <label for="{{ form.mobile_phone.name }}" class="sr-only">{{ form.mobile_phone.label }}</label>
-                  <input type="text" class="form-control input-lg" id="{{ form.mobile_phone.auto_id }}" name="{{ form.mobile_phone.name }}" placeholder="{{ form.mobile_phone.label }}">
+                  <input type="text" class="form-control input-lg" id="{{ form.mobile_phone.auto_id }}" name="{{ form.mobile_phone.name }}" placeholder="Celular">
                   <span class="form-focus-icon focus-icon-phone"></span>
                 </div>
               </div>
-              <button type="submit" class="btn btn-lucky btn-lg"><i class="glyphicon glyphicon-ok"></i> Register shop</button>
+              <button type="submit" class="btn btn-lucky btn-lg"><i class="glyphicon glyphicon-ok"></i>Registrar seu shop</button>
             </form>
           </div>
   			</div>
@@ -207,7 +211,7 @@
   			<div class="row">
   				<div class="col-md-12">
   					<div class="page-title">
-  						<h2>About Us <small>This is Our Awesome Team!</small></h2>
+  						<h2>Sobre nosso time</h2>
   					</div>
   				</div>
   			</div>
@@ -215,18 +219,12 @@
   			<div class="row">
   				<div class="col-md-6 col-sm-6">
   					<div class="heading-title">
-  						<h3>About Lucky Team</h3>
+  						<h3>Sobre nosso time</h3>
   					</div>
-  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					consequat.</p>
-  					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  					<p>ShopCode foi desenvolvido pelos alunos de Sistemas de informação da Faculdade UNA - Raja </p>
   				</div>
   				<!-- break -->
-  				<div class="col-md-6 col-sm-6">
+  				<!-- <div class="col-md-6 col-sm-6">
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <div class="team-container">
@@ -255,7 +253,7 @@
                 </div>
               </div>
             </div>
-  				</div>
+  				</div> -->
   			</div>
   		</div>
   	</div>
@@ -267,7 +265,7 @@
   			<div class="row">
   				<div class="col-md-12">
   					<div class="page-title">
-              <h2>Contact Us <small>If you have any questions, please leave us a message.</small></h2>
+              <h2>Entre em contato conosco <small>Se você tem alguma duvida, favor entrar em contato</small></h2>
             </div>
   				</div>
   			</div>
@@ -275,13 +273,11 @@
         <div class="row">
           <div class="col-md-5 col-sm-5 marg30-btm">
             <h4 class="text-uppercase text-xbold">Aditional Information</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi.</p>
+            <p>ShopCode foi criado para atender a necessidade das empresas de criarem suas lojas virtuais com baixo custo e maior facilidade e agilidade</p>
             <br>
             <address>
-              <strong>Templateninja, Inc.</strong><br><br>
-              231 Yogyakarta, INA 55791<br>
+              <strong>ShooCoode, Inc.</strong><br><br>
+              Avenida Amazonas, 123<br>
               mail@domain.com<br>
               http://www.domain.com <br>
               <abbr title="Phone">Telp.</abbr> (0274) 441-5000

@@ -2,8 +2,9 @@
 {% load i18n %}
 {% load url from future %}
 
+{% block page_title %}{% trans "Seu carrinho de compras" %}{% endblock %}
 {% block body %}
-  <h1>{% trans "Your shopping cart" %}</h1>
+  <h1>&nbsp;</h1>
   {% if cart_items %}
 
       <form method="post" action="{% url 'cart_update' %}">
@@ -55,17 +56,17 @@
             <tr><td colspan="2">&nbsp;</td><td><b>{% trans "Cart Total" %}</b></td><td><b>{{cart.total_price}}</b></td></tr>
           </tfoot>
         </table>
-
-        <p><input type="submit" value="{% trans "Update Shopping Cart" %}"/></p>
+        <hr />
+        <p style="text-align:right"><input type="submit" class="btn btn-primary" value="{% trans "Update Shopping Cart" %}"/></p>
       </form>
 
       <form action="{% url 'cart_delete' %}" method="post">
         {% csrf_token %}
-        <p><input type="submit" value="{% trans "Empty Shopping Cart" %}"/></p>
+        <p style="text-align:right"><input type="submit" class="btn btn-danger" value="{% trans "Empty Shopping Cart" %}"/></p>
       </form>
 
-      <p>
-        <a href="{% url 'checkout_selection' %}">{% trans "Proceed to checkout" %}</a>
+      <p style="text-align:right">
+        <!-- <a href="{% url 'checkout_selection' %}">{% trans "Proceed to checkout" %}</a> -->
       </p>
 
   {% else %}
